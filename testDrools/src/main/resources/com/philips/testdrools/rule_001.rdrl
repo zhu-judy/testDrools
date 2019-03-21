@@ -1,0 +1,13 @@
+package com.philips.testdrools;
+
+import java.lang.Number;
+
+rule "rule_001"
+	dialect "mvel"
+	when
+		ApplyInfo( famillyAddress != null , famillyAddress.province == "aa" , age > 18 )
+	then
+		ApplyInfo fact0 = new ApplyInfo();
+		fact0.setName( "goat" );
+		insert( fact0 );
+end
